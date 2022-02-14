@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import pandas_datareader as web
 import plotly.graph_objects as go
 from PIL import Image
-image = Image.open('a.svg')
+image = Image.open('a.jpeg')
 
 from streamlit_efficient_frontier import *
 from streamlit_var import *
