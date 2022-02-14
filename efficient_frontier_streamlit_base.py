@@ -7,6 +7,8 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import pandas_datareader as web
 import plotly.graph_objects as go
+from PIL import Image
+image = Image.open('a.svg')
 
 from streamlit_efficient_frontier import *
 from streamlit_var import *
@@ -16,6 +18,7 @@ risk_methods = ["covariance"]
 risk_free_rates = ["no risk free rate", "4 week treasury bill", "3 month treasury bill", "6 month treasury bill", "1 year treasury bill", "manual input"]
 function_list = ['efficient frontier', 'ticker drop', 'Value at Risk (VaR) analysis']
 
+st.image(image, caption='Ahmad Mostafavi')
 st.header("مرز کارآمد")
 with st.beta_expander('هدف پروژه'):
     st.write("تعیین مرزکارآمد برای بهینه‌سازی سبد سرمایه")
