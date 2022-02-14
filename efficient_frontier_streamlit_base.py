@@ -190,11 +190,11 @@ if sidebar_function == "efficient frontier":
                 st.write("بهترین پروتفولیو با حداکثر سود ممکن (قرمز)", portfolios[0])
             
             min_var_weights_pie = portfolios[1].drop(labels = ['ret', 'stdev', 'sharpe']).to_frame().reset_index()
-            min_var_pie = px.pie(min_var_weights_pie, values=min_var_weights_pie.columns[1], names='index', title='Mininum Variance Portfolio Diversification')
+            min_var_pie = px.pie(min_var_weights_pie, values=min_var_weights_pie.columns[1], names='index', title='مرزکارآمد برای حداقل نوسان')
             st.plotly_chart(min_var_pie)
             
             max_sharpe_weights_pie = portfolios[0].drop(labels = ['ret', 'stdev', 'sharpe']).to_frame().reset_index()
-            max_sharpe_pie = px.pie(max_sharpe_weights_pie, values=max_sharpe_weights_pie.columns[1], names='index', title='Maximum Sharpe Portfolio Diversification')
+            max_sharpe_pie = px.pie(max_sharpe_weights_pie, values=max_sharpe_weights_pie.columns[1], names='index', title='مرزکارآمد برای حداکثر سود')
             st.plotly_chart(max_sharpe_pie)
             
             if var_run == "yes":
@@ -316,7 +316,7 @@ if sidebar_function == "ticker drop":
         
         st.write(fig)
 
-if sidebar_function == "Value at Risk (VaR) analysis":
+if sidebar_function == "ارزش در معرض خطر (VaR) تحلیل":
     
     weights_options = ['randomly generated', 'manual input']
     
